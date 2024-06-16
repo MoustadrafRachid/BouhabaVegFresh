@@ -1,0 +1,21 @@
+<div class="product-detail-container">
+    <h2>Détails du Produit</h2>
+  
+    <div *ngIf="product">
+      <div class="product-info">
+        <img [src]="product.imageUrl" alt="{{ product.name }}" class="product-image">
+        <h3>{{ product.name }}</h3>
+        <p>{{ product.description }}</p>
+        <p><strong>Prix :</strong> {{ product.price | currency }}</p>
+      </div>
+  
+      <div class="actions">
+        <button (click)="addToCart(product)" class="btn btn-primary">Ajouter au Panier</button>
+      </div>
+    </div>
+  
+    <div *ngIf="!product">
+      <p>Produit non trouvé.</p>
+    </div>
+  </div>
+  

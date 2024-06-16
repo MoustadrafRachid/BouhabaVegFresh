@@ -1,0 +1,27 @@
+<header class="header-container">
+    <div class="logo">
+      <a routerLink="/">
+        <img src="assets/logo_bouhabafresh.png" alt="BouhabaFresh">
+      </a>
+    </div>
+    <nav class="main-nav">
+      <ul>
+        <li><a routerLink="/import-export">Import/Export</a></li>
+        <li><a routerLink="/fruits">Fruits</a></li>
+        <li><a routerLink="/legumes">Légumes</a></li>
+        <li><a routerLink="/autres-produits">Autres Produits</a></li>
+        <li><a routerLink="/guide-local">Guide Local</a></li>
+        <li><a routerLink="/contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="auth-links">
+      <ng-container *ngIf="isLoggedIn; else loggedOut">
+        <a (click)="logout()">Déconnexion</a>
+      </ng-container>
+      <ng-template #loggedOut>
+        <a routerLink="/login">Connexion</a>
+        <a routerLink="/register">Inscription</a>
+      </ng-template>
+    </div>
+  </header>
+  

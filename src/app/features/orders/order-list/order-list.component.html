@@ -1,0 +1,30 @@
+<div class="order-list-container">
+    <h2>Liste des Commandes</h2>
+    
+    <table>
+      <thead>
+        <tr>
+          <th>Numéro de Commande</th>
+          <th>Date</th>
+          <th>Statut</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let order of orders">
+          <td>{{ order.id }}</td>
+          <td>{{ order.date | date }}</td>
+          <td>{{ order.status }}</td>
+          <td>
+            <button (click)="viewOrderDetails(order.id)" class="btn btn-primary">Voir Détails</button>
+            <button (click)="deleteOrder(order.id)" class="btn btn-danger">Supprimer</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <div *ngIf="orders.length === 0">
+      <p>Aucune commande disponible.</p>
+    </div>
+  </div>
+  

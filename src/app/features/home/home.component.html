@@ -1,0 +1,46 @@
+<div class="hero">
+    <div class="slideshow-container">
+      <div class="slide" *ngFor="let slide of slides; let i = index" [style.backgroundImage]="'url(' + slide + ')'" [class.active]="i === currentSlideIndex"> 
+      </div>
+    </div>
+    <div class="overlay">
+      <img src="assets/logo_bouhabafresh.png" alt="BouhabaFresh" class="logo">
+      <h1>GROSSISTE FRUITS & LÉGUMES</h1>
+      <p>MIN DES ARNAVAUX - MARSEILLE</p>
+    </div>
+  </div>
+  
+  <nav class="main-nav">
+    <a routerLink="/import-export">Import/Export</a>
+    <a routerLink="/fruits">Fruits</a>
+    <a routerLink="/legumes">Légumes</a>
+    <a routerLink="/autres-produits">Autres Produits</a>
+    <a routerLink="/guide-local">Guide Local</a>
+    <a routerLink="/contact">Contact</a>
+  </nav>
+  
+  <div class="content">
+    <section class="introduction">
+      <h2>Bienvenue chez BouhabaFresh</h2>
+      <p>Nous sommes votre fournisseur de confiance en fruits et légumes en gros, offrant une large gamme de produits frais directement du marché.</p>
+    </section>
+  
+    <section class="categories">
+      <h2>Nos Catégories de Produits</h2>
+      <div class="category" *ngFor="let category of categories">
+        <h3>{{ category.name }}</h3>
+        <p>{{ category.description }}</p>
+      </div>
+    </section>
+  </div>
+  
+  <div class="contact-info">
+    <p><i class="fa fa-phone"></i> 04 69 00 22 41</p>
+    <p><i class="fa fa-fax"></i> 04 91 02 41 76</p>
+    <p><i class="fa fa-envelope"></i> contact&#64;bouhabafresh.fr</p>
+  </div>
+  
+  <div class="dots">
+    <span *ngFor="let slide of slides; let i = index" class="dot" [class.active]="i === currentSlideIndex" (click)="setCurrentSlide(i)"></span>
+  </div>
+  

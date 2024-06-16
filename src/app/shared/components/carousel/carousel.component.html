@@ -1,0 +1,12 @@
+<div class="carousel-container">
+    <div class="carousel-slide" *ngFor="let slide of slides; let i = index" [class.active]="i === currentSlideIndex" [style.backgroundImage]="'url(' + slide + ')'">
+    </div>
+  
+    <a class="prev" (click)="prevSlide()">&#10094;</a>
+    <a class="next" (click)="nextSlide()">&#10095;</a>
+  
+    <div class="carousel-dots">
+      <span *ngFor="let slide of slides; let i = index" class="dot" [class.active]="i === currentSlideIndex" (click)="setSlide(i)"></span>
+    </div>
+  </div>
+  
